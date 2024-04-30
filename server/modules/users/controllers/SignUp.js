@@ -18,6 +18,7 @@ const SignUp=async(req,res)=>{
   if(!validator.isEmail(email)) throw 'Please Input a Valid Email';
   if(!password) throw 'Password is Required';
   if (password.length < 8) throw "Password must b atleast 8 characters";
+
   // if(!validator.isStrongPassword(password)) throw 'Please Input Strong Password';
 
   const hashPassword=await bcrypt.hash(password,12);
@@ -36,7 +37,7 @@ const SignUp=async(req,res)=>{
     accessToken:accessToken
   });
 
-  // res.status(201).json(createdUser);
+
 
 }
 

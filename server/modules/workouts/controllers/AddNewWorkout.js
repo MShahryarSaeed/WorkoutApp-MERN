@@ -11,7 +11,7 @@ const AddNewWorkout = async (req, res) => {
   if (!load) throw 'Load is Requireds';
 
   
-  const user_id= req.user._id;  //To show the workouts of specific user
+  const user_id= req.user._id;  
   const createNewWorkout = await workoutModel.create({
     title: title,
     reps: reps,

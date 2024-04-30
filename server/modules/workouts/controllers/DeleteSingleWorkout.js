@@ -11,9 +11,7 @@ const DeleteSingleWorkout=async(req,res)=>{
     })
   }
 
-  const deletedWorkout=await workoutModel.findOneAndDelete({
-    _id:id
-  });
+  const deletedWorkout=await workoutModel.findOneAndDelete({_id:id});
 
   if(!deletedWorkout) throw 'No Workout Present for this Particular Id';
 

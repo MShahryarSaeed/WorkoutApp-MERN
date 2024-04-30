@@ -12,14 +12,12 @@ const GetSingleWorkout=async(req,res)=>{
     })
   }
 
-  const singleWorkout=await workoutModel.findOne({
-    _id:id
-  });
+  const singleWorkout=await workoutModel.findOne({_id:id});
 
   if(!singleWorkout) throw 'No Workout Present for this Particular Id';
 
 
-  res.status(200).json(singleWorkout)
+  res.status(200).json(singleWorkout);
 
 }
 
