@@ -53,7 +53,7 @@ app.all("*",(req,res)=>{
 // errorHandler
 app.use(errorHandler);
 
-// Server Initializations
+// Server Initialization
 app.listen(process.env.PORT,()=>{
   console.log(`Server is listening on http://localhost:${process.env.PORT}`);
 })
