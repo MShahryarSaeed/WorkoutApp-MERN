@@ -1,31 +1,34 @@
 const jsonwebtoken = require('jsonwebtoken');
 const mongoose = require('mongoose');
 
+
 const auth = async (req, res, next) => {
-  // console.log("Auth :", req.headers);
-  const userModel = mongoose.model('users');
 
-    // verify user is authenticated
-    const { authorization } = req.headers
+  const userModel = mongoose.model('users'); 
 
-    if (!authorization) {
-      return res.status(401).json({error: 'Authorization token required'})
-    }
+  // Extracting authorization token from request headers
+  const { authorization } = req.headers;
+
   
+  if (!authorization) {
+    return res.status(401).json({ error: 'Authorization token required' });
+  }
 
   try {
+    // Extracting access token from authorization header
+    const accessToken = authorization.replace("Bearer ", "");
 
-    const accessToken = authorization.replace("Bearer ", "");  //Get only token
-    // console.log(accessToken);
-
+   
     const { _id } = jsonwebtoken.verify(accessToken, process.env.SECERET);
-    
-    // This will accessable in all places in backend for Example : AddNewWorkout.js
-    req.user = await userModel.findOne({  _id }).select('_id');
-    console.log("ID:",req.user);
+
+    // Finding user by ID in the database
+    req.user = await userModel.findOne({ _id }).select('_id');
+   
 
   } catch (error) {
-    console.log("Error :",error);
+
+    console.log("Error :", error); 
+  
     res.status(401).json({
       status: "failed",
       message: "unAuthorized"
@@ -35,8 +38,7 @@ const auth = async (req, res, next) => {
 
   }
 
-  next();
-
+  next(); 
 }
 
-module.exports = auth;
+module.exports = auth; 
