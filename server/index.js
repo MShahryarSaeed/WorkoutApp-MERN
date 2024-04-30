@@ -22,7 +22,7 @@ app.use((req, res, next) => {
 
 
 // Basic GET Method
-app.get('/api/hello',(req,res)=>{
+app.get('/',(req,res)=>{
   res.send("Hello Wolrd From Workout App Server");
 });
 
