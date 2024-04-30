@@ -15,7 +15,7 @@ const Home = () => {
     const fetchWorkouts = async () => {
 
       try {
-        const response = await fetch(`/api/workouts`,{
+        const response = await fetch(`https://workout-app-mern-iota.vercel.app/api/workouts`,{
           headers:{
             'Authorization':`Bearer ${user.accessToken}`
           }
