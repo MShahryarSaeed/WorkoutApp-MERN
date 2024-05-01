@@ -36,7 +36,7 @@ Move to client and this command
 5. In the Root Directory of the Project run:
 
    ```bash
-   npm run dev
+   npm start
    ```
    This will start the development server on port 8000.
 
