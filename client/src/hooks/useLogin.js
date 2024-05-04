@@ -9,7 +9,7 @@ export const useLogin=()=>{
  
   const login=async(email,password)=>{
 
-    const response=await fetch(`https://workout-app-mern-iota.vercel.app/api/users/login`,{
+    const response=await fetch(`https://workout-app-mern-01.vercel.app/api/users/login`,{
       method:'POST',
       body:JSON.stringify({email,password}),
       headers:{

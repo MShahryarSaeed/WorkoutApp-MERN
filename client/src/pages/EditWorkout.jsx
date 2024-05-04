@@ -16,7 +16,7 @@ const EditWorkout = () => {
   useEffect(()=>{
     const fetchWorkout=async()=>{
 
-      const response=await fetch(`https://workout-app-mern-iota.vercel.app/api/workouts/${id}`,{
+      const response=await fetch(`https://workout-app-mern-01.vercel.app//api/workouts/${id}`,{
         method:'GET',
         headers:{
           'Authorization':`Bearer ${user.accessToken}`

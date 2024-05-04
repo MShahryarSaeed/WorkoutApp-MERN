@@ -12,7 +12,7 @@ const WorkoutDetails = ({ workout }) => {
     if(!user){
       return;
     }
-    const response = await fetch('https://workout-app-mern-iota.vercel.app/api/workouts/' + workout._id, {
+    const response = await fetch('https://workout-app-mern-01.vercel.app/api/workouts/' + workout._id, {
       method: 'DELETE',
       headers:{
         'Authorization':`Bearer ${user.accessToken}`

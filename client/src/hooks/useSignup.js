@@ -16,7 +16,7 @@ export const useSignup = () => {
     setIsLoading(true);
     setError(null);
 
-    const response = await fetch('https://workout-app-mern-iota.vercel.app/api/users/signup', {
+    const response = await fetch('https://workout-app-mern-01.vercel.app/api/users/signup', {
       method: 'POST',
       // Passing email and password as object 
       body: JSON.stringify({ email, password }),
